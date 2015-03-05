@@ -1,0 +1,57 @@
+lib.HansenModel
+Set values
+explore parameters
+
+assigning regimes
+
+capture results of HansenFit as HansenModel; store in file; permit its application to simulation
+
+logging to file as toggle
+
+
+===
+
+'#' begins comments
+'>'Êis the command prompt in R
+
+Sure, here's some simple code:  
+------------------------------------------
+
+# define a 2x2 matrix with values 1,2,3,4, assign it to m 
+
+ m <- matrix(data=c(1,2,3,4), nrow=2)
+
+# take the transpose of m assign it to trans_m
+
+ t(m) -> trans_m
+
+# print contents of m by just typing "m" at prompt:
+
+m
+
+# will return:
+    Ê[,1] [,2]
+[1,]    1    3
+[2,]    2    4
+
+# print contents of trans_m :
+
+trans_m
+
+# will return:
+    Ê[,1] [,2]
+[1,]    1    2
+[2,]    3    4
+
+# add m and t(m) together and display value:
+
+m + trans_m
+
+# or 
+
+m + t(m)
+
+# will return:
+    Ê[,1] [,2]
+[1,]    2    5
+[2,]    5    8

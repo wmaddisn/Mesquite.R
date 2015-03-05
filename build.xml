@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<!--
+
+    This is the ant build file for the Mesquite.R Java package for 
+    R<->Mesquite interaction.
+
+-->
+
+<project name="Mesquite.R" default="jar">
+
+  <!--
+
+      ############################################################
+      Properties section
+      ############################################################
+
+    -->
+
+  <!-- additional local properties for this build -->
+  <property file="build.properties"/>
+
+  <!-- project info -->
+  <property name="project" value="Mesquite.R"/>
+  <property name="version.number" value="0.0.3"/>
+
+  <!-- distribution -->
+  <property name="dist.name" value="${project}-${version.number}"/>
+
+  <!-- directories -->
+  <property name="dir.build" value="build"/>
+  <property name="dir.build.classes" value="${dir.build}/classes"/>
+  <property name="dir.src" value="Source"/>
+  <property name="dir.lib" value="lib"/>
+  <property name="dir.doc" value="docs"/>
+  <property name="dir.apidoc" value="${dir.doc}/api"/>
+  <property name="dir.test" value="test"/>
+
+  <!-- files -->
+  <property name="file.jar" value="${dir.build}/${dist.name}.jar"/>
+
+  <!-- deployment -->
+  <property name="dir.deploy" value="deploy"/>
+  <property name="R.package" value="RMesquite"/>
+
+  <!-- paths and sets of files -->
+  <patternset id="file.list.RtoM">
+    <include name="mesquite/R/lib/**/*"/>
+  </patternset>
+  <patternset id="file.list.MtoR">
+    <include name="mesquite/R/lib/**/*"/>
+  </patternset>
+
+  <!-- classes: -->
+  <fileset dir="${dir.build.classes}" id="classfiles.RtoM">
+    <patternset refid="file.list.RtoM"/>
+    <filename name="**/*.class"/>
+  </fileset>
+  <fileset dir="${dir.build.classes}" id="classfiles.MtoR">
+    <patternset refid="file.list.MtoR"/>
+    <filename name="**/*.class"/>
+  </fileset>
+
+  <!-- additional elements for classpath -->
+  <path id="my.classpath">
+    <pathelement path="${mesquite.home}"/>
+  </path>
+
+  <!--
+
+      ############################################################
+      Target section
+      ############################################################
+
+    -->
+
+  <target name="init">
+    <tstamp>
+      <format property="TODAY.NOW" pattern="MMM d yyyy, hh:mm:ss"/>
+    </tstamp>
+    <echo message="Started build script for Mesquite.R ${TODAY.NOW}"/>
+  </target>
+
+  <!-- compile the source files -->
+  <target name="compile" depends="init" description="Compile sources.">
+    <mkdir dir="${dir.build}"/>
+    <mkdir dir="${dir.build.classes}"/>
+    <javac srcdir="${dir.src}"
+	   destdir="${dir.build.classes}"
+	   includeAntRuntime="false" debug="true" deprecation="true"
+	   >
+      <classpath><path refid="my.classpath"/></classpath>
+      <patternset refid="file.list.RtoM"/>
+      <filename name="**/*.java"/>
+    </javac>
+  </target>
+
+  <!-- build jar file -->
+  <target name="jar" depends="compile" description="Create jar file.">
+    <!-- jar it up -->
+    <jar jarfile="${file.jar}"
+	 basedir="${dir.build.classes}" compress="true"
+	 update="false">
+      <exclude name="**/*"/>
+      <fileset refid="classfiles.RtoM"/>
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="rebuild" depends="clean,jar" description="Rebuild the jar.">
+    <echo message="Rebuild done."/>
+  </target>
+
+  <target name="javadoc" depends="init" description="Generate Javadoc.">
+    <mkdir dir="${dir.apidoc}"/>
+    <javadoc destdir="${dir.apidoc}"
+             windowtitle="${project} Javadoc Documentation"
+             doctitle="${project} Javadoc Documentation"
+             package="true" version="true" author="true">
+      <classpath>
+        <path refid="my.classpath"/>
+        <fileset dir="${dir.build}"><patternset refid="lib.jars"/></fileset>
+      </classpath>
+      <fileset refid="srcfiles"/>
+      <link href="http://java.sun.com/j2se/1.4.2/docs/api/"/>
+    </javadoc>
+  </target>
+
+  <target name="clean" depends="init" description="Clean all build products.">
+    <delete>
+      <fileset dir="${dir.build.classes}"/>
+    </delete>
+    <delete file="${file.jar}"/>
+  </target>
+
+  <target name="deploy" depends="jar" 
+          description="Deploy jar file to destination">
+    <copy file="${file.jar}" todir="${deploy.dir}" 
+          flatten="true" preservelastmodified="true" verbose="true"/>
+  </target>
+
+  <target name="Rinstall" depends="deploy" 
+          description="Install the R package">
+    <exec executable="R" dir="${deploy.dir}/../../..">
+      <arg value="CMD"/>
+      <arg value="INSTALL"/>
+      <arg value="${R.package}"/>
+    </exec>
+  </target>
+
+</project>

@@ -1,0 +1,367 @@
+#NEXUS
+[written Wed Sep 14 09:53:32 PDT 2011 by Mesquite  version 2.74+ (build 558) at Thrandina.local/192.168.0.146 (Wayne Maddison)]
+
+BEGIN TAXA;
+	TITLE Untitled_Block_of_Taxa;
+	DIMENSIONS NTAX=14;
+	TAXLABELS
+		magnirostris conirostris difficilis scandens fortis fuliginosa pallida fusca parvulus pauper Pinaroloxias Platyspiza psittacula olivacea 
+	;
+	IDS WM1168381dc725 WM1168381dc866 WM1168381dc877 WM1168381dc8e8 WM1168381dc8f9 WM1168381dc8f10 WM1168381dc9011 WM1168381dc9312 WM1168381dc9e13 WM1168381dc9f14 WM1168381dc9f15 WM1168381dca016 WM1168381dca217 WM116838347fa18 ;
+	BLOCKID WM1168381dc602;
+
+END;
+
+
+BEGIN CHARACTERS;
+	TITLE  Measurements;
+	DIMENSIONS  NCHAR=5;
+	FORMAT DATATYPE = CONTINUOUS GAP = - MISSING = ?;
+CHARSTATELABELS 
+		1 wingL,
+		2 tarsusL,
+		3 culmenL,
+		4 beakD,
+		5 gonysW ; 
+	MATRIX
+	magnirostris   4.4042 3.03895 2.724667 2.823767 2.675983
+	conirostris    4.349867 2.9842 2.6544 2.5138 2.360167
+	difficilis     4.224067 2.898917 2.277183 2.0111 1.929983
+	scandens       4.261222 2.929033 2.621789 2.1447 2.036944
+	fortis         4.244008 2.894717 2.407025 2.362658 2.221867
+	fuliginosa     4.132957 2.806514 2.094971 1.941157 1.845379
+	pallida        4.265425 3.08945 2.43025 2.01635 1.949125
+	fusca          3.975393 2.936536 2.051843 1.191264 1.401186
+	parvulus       4.1316 2.97306 1.97442 1.87354 1.81334
+	pauper         4.2325 3.0359 2.187 2.0734 1.9621
+	Pinaroloxias   4.1886 2.9802 2.3111 1.5475 1.6301
+	Platyspiza     4.419686 3.270543 2.331471 2.347471 2.282443
+	psittacula     4.23502 3.04912 2.25964 2.23004 2.07394
+	olivacea       ? ? ? ? ?
+
+;
+	IDS WM1168381dc652 WM1168381dc6b3 WM1168381dc6c4 WM1168381dc6c5 WM1168381dc6c6 ;
+	BLOCKID WM1168381dc600;
+
+
+END;
+BEGIN TREES;
+	Title Imported_trees;
+	LINK Taxa = Untitled_Block_of_Taxa;
+	TRANSLATE
+		1 magnirostris,
+		2 conirostris,
+		3 difficilis,
+		4 scandens,
+		5 fortis,
+		6 fuliginosa,
+		7 pallida,
+		8 fusca,
+		9 parvulus,
+		10 pauper,
+		11 Pinaroloxias,
+		12 Platyspiza,
+		13 psittacula,
+		14 olivacea;
+	TREE Imported_tree_0 = ((((((((((6:0.055,5:0.055):0.055,1:0.11):0.07333,2:0.18333):0.00917,4:0.1925):0.0355,3:0.228):0.10346,(7:0.08667,((9:0.02,13:0.02):0.015,10:0.035):0.05167):0.24479):0.13404,12:0.4655):0.06859,8:0.53409):0.04924,11:0.58333):0.29744,14:0.88077);
+
+END;
+
+
+BEGIN ASSUMPTIONS;
+	TYPESET * UNTITLED   =  Squared:  1 -  5;
+
+END;
+
+BEGIN MESQUITECHARMODELS;
+	ProbModelSet * UNTITLED   =  Brownian_default:  1 -  5;
+END;
+
+Begin MESQUITE;
+		MESQUITESCRIPTVERSION 2;
+		TITLE AUTO;
+		tell ProjectCoordinator;
+		timeSaved 1316019212856;
+		getEmployee #mesquite.minimal.ManageTaxa.ManageTaxa;
+		tell It;
+			setID 0 5494437354148171170 WM1168381dc602;
+		endTell;
+		getEmployee #mesquite.charMatrices.ManageCharacters.ManageCharacters;
+		tell It;
+			setID 0 1627930331941886886 WM1168381dc600;
+			mqVersion 274;
+			checksumv 0 2 1312649775 WM1168381dc600  numChars 5   numItems 1   min 1.191264   max 4.419686   sumSquares 533.75319415395   NumFiles 1 NumMatrices 1;
+			mqVersion;
+		endTell;
+		getWindow;
+		tell It;
+			suppress;
+			setResourcesState false false 100;
+			setPopoutState 400;
+			setExplanationSize 0;
+			setAnnotationSize 0;
+			setFontIncAnnot 0;
+			setFontIncExp 0;
+			setSize 1495 805;
+			setLocation 8 23;
+			setFont SanSerif;
+			setFontSize 10;
+			getToolPalette;
+			tell It;
+			endTell;
+			desuppress;
+		endTell;
+		getEmployee  #mesquite.trees.BasicTreeWindowCoord.BasicTreeWindowCoord;
+		tell It;
+			makeTreeWindow #5494437354148171170  #mesquite.trees.BasicTreeWindowMaker.BasicTreeWindowMaker;
+			tell It;
+				suppressEPCResponse;
+				setTreeSource  #mesquite.trees.StoredTrees.StoredTrees;
+				tell It;
+					setTreeBlock 1;
+					toggleUseWeights off;
+				endTell;
+				setAssignedID 944.1196207368096.1188714930058062945;
+				getTreeWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 995 738;
+					setLocation 8 23;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.trees.BasicTreeWindowMaker.BasicTreeWindow.arrow;
+					endTell;
+					setActive;
+					getTreeDrawCoordinator #mesquite.trees.BasicTreeDrawCoordinator.BasicTreeDrawCoordinator;
+				tell It;
+					suppress;
+					setTreeDrawer  #mesquite.trees.BallsNSticks.BallsNSticks;
+					tell It;
+						setSpotDiameter 28;
+						setEdgeWidth 2;
+						orientRight;
+						useDiagonal;
+						toggleBallsInternal on;
+						toggleCosmic off;
+						getEmployee #mesquite.trees.NodeLocsStandard.NodeLocsStandard;
+						tell It;
+							branchLengthsToggle on;
+							toggleScale on;
+							toggleBroadScale off;
+							toggleCenter off;
+							toggleEven off;
+						endTell;
+					endTell;
+					setBackground White;
+					setBranchColor Black;
+					showNodeNumbers off;
+					showBranchColors on;
+					labelBranchLengths off;
+					centerBrLenLabels on;
+					showBrLensUnspecified on;
+					showBrLenLabelsOnTerminals on;
+					setBrLenLabelColor 0 0 255;
+					setNumBrLenDecimals 6;
+					desuppress;
+					getEmployee #mesquite.trees.BasicDrawTaxonNames.BasicDrawTaxonNames;
+					tell It;
+						setFontSize 14;
+						setColor Black;
+						toggleColorPartition on;
+						toggleShadePartition off;
+						toggleShowFootnotes on;
+						toggleNodeLabels on;
+						toggleCenterNodeNames off;
+						toggleShowNames on;
+						namesAngle ?;
+					endTell;
+				endTell;
+					setTreeNumber 1;
+					setTree '(((((((((6:0.055,5:0.055):0.055,1:0.11):0.07333,2:0.18333):0.00917,4:0.1925):0.0355,3:0.228):0.13007088235294118,(7:0.08667,((9:0.02,13:0.02):0.015,10:0.035):0.05167):0.2714008823529412):0.10742911764705883,12:0.4655):0.06859,8:0.53409):0.04924,11:0.58333):0.29744;';
+					setDrawingSizeMode 0;
+					toggleLegendFloat on;
+					scale 0;
+					toggleTextOnTree off;
+					showWindow;
+					newAssistant  #mesquite.ancstates.TraceCharacterHistory.TraceCharacterHistory;
+				tell It;
+					suspend ;
+					setDisplayMode  #mesquite.ancstates.ShadeStatesOnTree.ShadeStatesOnTree;
+					tell It;
+						toggleLabels off;
+						toggleGray off;
+					endTell;
+					setHistorySource  #mesquite.ancstates.RecAncestralStates.RecAncestralStates;
+					tell It;
+						getCharacterSource  #mesquite.charMatrices.CharSrcCoordObed.CharSrcCoordObed;
+						tell It;
+							setCharacterSource #mesquite.charMatrices.StoredCharacters.StoredCharacters;
+							tell It;
+								setDataSet #1627930331941886886;
+							endTell;
+						endTell;
+						setMethod  #mesquite.R.MesquiteCallsR.ape.APEaceGLSCont.APEaceGLSCont;
+					endTell;
+					setCharacter 1;
+					setMapping 1;
+					toggleShowLegend on;
+					toggleGray off;
+					toggleWeights on;
+					setInitialOffsetX 20;
+					setInitialOffsetY 372;
+					setLegendWidth 142;
+					setLegendHeight 305;
+					resume ;
+					modifyColors  10 0  165 168 167;
+				endTell;
+				endTell;
+				desuppressEPCResponse;
+				getEmployee #mesquite.trees.ColorBranches.ColorBranches;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.ornamental.BranchNotes.BranchNotes;
+				tell It;
+					setAlwaysOn off;
+				endTell;
+				getEmployee #mesquite.ornamental.ColorTreeByPartition.ColorTreeByPartition;
+				tell It;
+					colorByPartition off;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocDoubles.DrawTreeAssocDoubles;
+				tell It;
+					setOn on;
+					setDigits 4;
+					writeAsPercentage off;
+					toggleCentred on;
+					toggleHorizontal on;
+					toggleWhiteEdges on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocStrings.DrawTreeAssocStrings;
+				tell It;
+					setOn on;
+					toggleCentred on;
+					toggleHorizontal on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.trees.TreeInfoValues.TreeInfoValues;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		getEmployee  #mesquite.charMatrices.BasicDataWindowCoord.BasicDataWindowCoord;
+		tell It;
+			showDataWindow #1627930331941886886 #mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindowMaker;
+			tell It;
+				getWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 995 738;
+					setLocation 8 23;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.ibeam;
+					endTell;
+					setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.ibeam;
+					colorCells  #mesquite.charMatrices.NoColor.NoColor;
+					colorRowNames  #mesquite.charMatrices.TaxonGroupColor.TaxonGroupColor;
+					colorColumnNames  #mesquite.charMatrices.CharGroupColor.CharGroupColor;
+					colorText  #mesquite.charMatrices.NoColor.NoColor;
+					setBackground White;
+					toggleShowNames on;
+					toggleShowTaxonNames on;
+					toggleTight off;
+					toggleThinRows off;
+					toggleShowChanges on;
+					toggleSeparateLines off;
+					toggleShowStates on;
+					toggleAutoWCharNames on;
+					toggleAutoTaxonNames off;
+					toggleShowDefaultCharNames off;
+					toggleConstrainCW on;
+					setColumnWidth 70;
+					toggleBirdsEye off;
+					toggleShowPaleGrid off;
+					toggleShowPaleCellColors off;
+					togglePaleInapplicable on;
+					toggleShowBoldCellText off;
+					toggleAllowAutosize on;
+					toggleColorsPanel off;
+					toggleLinkedScrolling on;
+					toggleScrollLinkedTables off;
+				endTell;
+				showWindow;
+				getEmployee #mesquite.charMatrices.ColorByState.ColorByState;
+				tell It;
+					setStateLimit 9;
+					toggleUniformMaximum on;
+				endTell;
+				getEmployee #mesquite.charMatrices.ColorCells.ColorCells;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.charMatrices.AnnotPanel.AnnotPanel;
+				tell It;
+					togglePanel off;
+				endTell;
+				getEmployee #mesquite.charMatrices.CharReferenceStrip.CharReferenceStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.SelSummaryStrip.SelSummaryStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.cont.ItemsEditorForInfoPanel.ItemsEditorForInfoPanel;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		newAssistant  #mesquite.basic.ExamplesNavigator.ExamplesNavigator;
+		tell It;
+			setNextFileName 'ape03-plot.nex';
+			setPrevFileName 'ape01-chronoPL.nex';
+			getWindow;
+			tell It;
+					popAsTile true;
+					popOut;
+					setExplanationSize 0;
+					setAnnotationSize 0;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 394 788;
+					setLocation 8 23;
+					setFont SanSerif;
+					setFontSize 12;
+					getToolPalette;
+					tell It;
+					endTell;
+				setExplanation 'ape''s ace function, which reconstructs ancestral states, is available for continuous characters where reconstruction of ancestral states is done.  Notice in the tree window at left that there are four extra choices under Reconstruction Method in the Trace menu:^n^nGeneralized Least Squares (ape: ace: GLS)^nBrownian Motion Likelihood (ape: ace: ML)^nLeast Squares (ape: ace: pic)^nape''s ace [User-specified] (ape: ace)^n^nThe first three pre-configure ace for specific purposes; the fourth allows you to enter the arguments for the ace command by hand.^n^nPlease see ape''s documentation for more details of these functions.';
+				setTitle 'ape''s ace for ancestral states';
+				toggleFileNames off;
+				setPrevButtonName Previous;
+				setNextButtonName Next;
+			endTell;
+			showWindow;
+		endTell;
+		endTell;
+end;
+
+

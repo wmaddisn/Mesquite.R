@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mesquite.R: ape</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
+.style4 {font-family: Arial, Helvetica, sans-serif}
+.style5 {font-size: x-large}
+.style7 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<table width="100%" cellspacing="8">
+  <tr>
+    <td width="300" class="style4"><img src="splash.gif" alt="logo" width="164" height="64"></td>
+    <td width="100%" bgcolor="#FFFF66" class="style4"> <p class="style5">&nbsp;</p>    </td>
+  </tr>
+</table>
+<h1 class="style1">Using the R package &quot;ape&quot; from Mesquite</h1>
+<p class="style4"><em>ape citation:  Paradis E., Claude J. &amp; Strimmer K. 2004. APE: analyses of phylogenetics and evolution in R language. Bioinformatics 20: 289–290<br>
+  <br>
+  Mesquite.R's translation package (<em>version 0.6)</em> for ape: W. Maddison &amp; D. Maddison</em>. <a href="http://mesquiteproject.org/packages/Mesquite.R/MesquiteCallsR/ape/index.html">Latest version</a> </p>
+<p class="style4"><strong>ape (Analysis of Phylogenetics and Evolution)</strong> is an R package whose development has been led by Emmanuel Paradis. Please see <a href="http://ape.mpl.ird.fr">ape's web page</a> for more details about these methods. </p>
+<hr>
+<p class="style4">To use the ape package from Mesquite you need to  install the <a href="../../MesquiteR.html">Mesquite.R package</a>. When this is installed, the modules to link to ape are also installed. Not all ape functions are accessible in this way. We have chosen functions we felt would be of most interest; feel free to propose others to be made accessible.</p>
+<p class="style4">Examples files are included with Mesquite.R, in the directory <a href="../../examples/">mesquite/R/MesquiteCallsR/examples</a>, which will be in your Mesquite_Folder once Mesquite.R is installed.</p>
+<h3 class="style4"><strong>Reconstructing ancestral states for <em>continuous</em> characters</strong></h3>
+<p class="style4">The following options are available as reconstructors of ancestral states (for instance, in Analysis&gt;Trace Character History):</p>
+<ul class="style4">
+  <li><strong>Generalized Least Squares (ape: ace: GLS)</strong> — the GLS option of ape's ace function.</li>
+  <li><strong>Brownian Motion Likelihood (ape: ace: ML) </strong>— the maximum likelihood option of ape's ace function.</li>
+  <li><strong>Least Squares (ape: ace: pic)</strong> — the least squares option of ape's ace function.</li>
+  <li><strong>ape's ace [User-specified] (ape: ace)</strong> — With this function you specify the arguments for ape's ace function by hand. </li>
+</ul>
+<h3 class="style4"><strong>Divergence times / Rate smoothing</strong></h3>
+<p class="style4">The following options are available where branch lengths transformations can be done, such as in the Tree Window under Tree&gt;Alter/Transform Branch Lengths, or using Transform Trees from Other Source:</p>
+<ul class="style4">
+  <li>NPRS (ape: chronogram) — Non-parametric rate smoothing (Sanderson 1997). THIS IS NO LONGER AVAILABLE as it has been removed from ape.</li>
+  <li><strong>Penalized Likelihood (ape: chronopl) </strong>— The method of Sanderson (2002). This respects constraints put on the ages of nodes. To add node age constraints to a tree in Mesquite, use the Node Age Constraint tool (shaped like an anchor). Touch on the branch below (ancestral to) a node to constrain that node. A small text field will appear in which you type the constraint. To indicate a range (minumum age and maximum age) enter &quot;minimum-maximum&quot; (without the quotes: for instance, 20.4-35.9). To indicate a maximum age, enter &quot;0-maximum&quot;, e.g. 0-35.9. To indicate a minimum age, enter &quot;minimum-SomeVeryLargeNumber&quot;, e.g. 24.6-1000. The reason this format is needed for minima is that the current version of ape does not support simple minimum ages. (Mesquite's convention is to indicate minimum by the format &quot;min+&quot;, e.g. 24.6+, but this cannot be used with  ape's Penalized likelihood function.) WARNING: In the current version of ape, with some age constraints the calculation fails and appears to run forever. You will need to use an emergency cancel.</li>
+</ul>
+<h3 class="style7">Plotting trees</h3>
+<ul class="style4">
+  <li><strong>Plot Tree (ape: plot) </strong>— In the Tree menu of tree windows. Shows a window with the tree plotted in R. As the tree in the tree window changes, so does the tree plotted.</li>
+  <li><strong>Plot Tree to PDF (ape: plot)</strong> — In the Utilities submenu of the Tree menu of the tree window; saves tree as a pdf plotted by R.</li>
+</ul>
+<h3 class="style4">Citation</h3>
+<p class="style4">The primary calculations are done by the packages in R. Thus, we suggest a citation like this: &quot;The &lt;insert analysis name here&gt; analysis was performed by the R package ape (Paradis et al. 2004) version &lt;insert version number here&gt;, run via the Mesquite.R package (Maddison &amp; Lapp, 2011) in Mesquite 2.75 (Maddison &amp; Maddison, 2011).&quot;</p>
+<hr>
+<p><span class="style4">Mesquite.R's translation package for ape is distributed under a <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPL version 2 license</a>.</span></p>
+<p><span class="style4">DISCLAIMER: some of the R functions that Mesquite.R is employing may have bugs or misbehaviours; the authors of Mesquite are not responsible for such problems. BUG REPORTS: If a result is supplied but it seems incorrect, please contact both the authors of the R package and the authors of the Mesquite interface to the R package. If there is a crash, please contact first the authors of the Mesquite interface to the R package. </span></p>
+<p>&nbsp;</p>
+</body>
+</html>

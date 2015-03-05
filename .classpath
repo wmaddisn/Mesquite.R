@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="mesquite/rmLink/mCallsR/AddMatrix/|mesquite/rmLink/notes/Windows/|mesquite/rmLink/notes/MacOSX/|mesquite/R/notes/" kind="src" path="Source"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MesquiteCore"/>
+	<classpathentry kind="lib" path="Source/jars/RMesquiteFromRForge.jar"/>
+	<classpathentry kind="output" path="Mesquite_Folder"/>
+</classpath>

@@ -1,0 +1,21 @@
+#######################################################################
+# Ant build properties for RMesquite.
+#
+# In order for this file to take effect, you will need to create a
+# copy of it under the name build.properties, and change according to
+# your local setup.
+#######################################################################
+
+#
+# Where is Mesquite installed? This is the root directory of the
+# Mesquite installation.
+#
+mesquite.home = /Applications/Mesquite_Folder
+# Windows?
+# mesquite.home = C\:\\Program Files\\Mesquite_Folder
+
+#
+# Where should the jar be copied for deployment?
+#
+deploy.dir = /path/to/where/to/deploy/jarFile
+# deploy.dir = /Users/lapp/Devel/phyloc/trunk/Rpkgs/RMesquite/inst/java

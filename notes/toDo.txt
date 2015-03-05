@@ -1,0 +1,47 @@
+Mesquite.R to do
+
+••••• check notice on aMesquiteRIntro startup as to what version built for 
+ •••• make sure installer requirement is 2.72
+
+√√√add flag to executables to indicate that Mesquite started from executable
+
+√√√√RLinker: method to check that package is ready during startup of module
+
+√√√√check out RMesquite
+
+citations
+
+check to see if libraries on OS X & windows can work if shell file like .sh
+
+Setup submenu
+-- list version of R made for
+-- verbose or not
+ 
+ •••• make sure installer requirement is 2.72
+  •••• aMesquiteRIntro: check windows behaviour with .bat
+  •••• expose disparity, fitContinuous?
+  •••• expose OUCH?
+  •••• EXAMPLE FILES
+ 
+ R:
+ ••• if not gui version in ones requiring gui, then complain and return?
+ 
+ 
+ Bosque:
+ •••• raxml
+
+general: treecharsimulate capture as tree simulator
+and attach character, and have new character source
+
+
+
+/*
+	 * data frames
+	 * start mesquite module of duty
+	 * geiger: fit continuous, ask luke
+	 * anc st from Mesquite
+	 * */
+	 
+	 
+To get JRI
+http://www.rforge.net/rJava/

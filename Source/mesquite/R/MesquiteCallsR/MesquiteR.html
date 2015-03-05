@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mesquite.R</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
+.style3 {
+	font-size: medium;
+	font-style: italic;
+}
+.style4 {font-family: Arial, Helvetica, sans-serif}
+.style5 {font-size: x-large}
+.style11 {
+	color: #CC6600;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<table width="100%" cellspacing="8">
+  <tr>
+    <td width="300" class="style4"><img src="images/splash.gif" alt="logo" width="164" height="64"></td>
+    <td width="100%" bgcolor="#6C6252" class="style4"> <p class="style5">&nbsp;</p>    </td>
+  </tr>
+</table>
+<h1 class="style1">Mesquite.R package for Mesquite</h1>
+<h3 class="style4">version 0.7</h3>
+<p class="style1"><span class="style3">Wayne Maddison &amp; Hilmar Lapp</span></p>
+<p class="style4">The <em><strong>Mesquite.R</strong></em> package provides basic services for Mesquite to make use of functions in the R statistical language. With <em>Mesquite.R</em>, Mesquite users can have access to the broad array of computations in R. <em>Mesquite.R</em> also provides services for   R users to make use of  Mesquite from within R, but insofar as this use is initiated from R, its description is given in connection with the <a href="http://rmesquite.r-forge.r-project.org">RMesquite package</a> in R. </p>
+<p class="style4">As a Mesquite user, you don't have access to all functions of R — you have access to those functions for which translation modules have been written. To date we have written translation modules for some functions of the R packages <strong>ape</strong> (Paradis et al.) and <strong>diversitree</strong> (FitzJohn). For details of the functions available, see the documentation on the translation packages for <strong><a href="ape/aAPEIntro/index.html">ape</a></strong>  and <strong><a href="diversitree/aDiversitreeIntro/index.html">diversitree</a></strong>.</p>
+<p class="style4">For instance you can display a tree in a tree window, use a special tool to constrain the ages of nodes, then call ape's chronopl function directly from a menu item in Mesquite. Mesquite sends the tree to chronopl and then receives the tree modified with branch lengths adjusted by penalized likelihood rate smoothing:</p>
+<table width="600" cellspacing="8">
+  <tr>
+    <td class="style4"><img src="images/beforeCPL.jpg" width="435" height="325"></td>
+    <td class="style4"><img src="images/afterCPL.jpg" width="435" height="324"></td>
+  </tr>
+  <tr>
+    <td class="style4">Before</td>
+    <td class="style4">After calling chronopl</td>
+  </tr>
+</table>
+<h2 class="style4">Installing and Using <em>Mesquite.R</em></h2>
+<p class="style4">Mesquite's use of functions in R requires the following:</p>
+<ol class="style4">
+  <li><strong>R must be installed on your computer</strong>. Download R at <a href="http://cran.r-project.org">http://cran.r-project.org</a>. This version of Mesquite.R was built for use with R version 2.10.0, but will probably work with other versions.</li>
+  <li>In R, you must install the package <strong>rJava</strong> as well as the specific packages you wish to access such as <strong>ape </strong>and<strong> diversitree</strong>. How you install them will depend on what version of R you have installed. If you have the graphical user interface version of R, start that up. There will probably be a Package Installer menu item. You may need to choose an archive mirror near you, and then choose the packages to be installed. If it gives you a choice, install the binaries and ask to install dependencies. </li>
+  <li>In Mesquite, you need to install the <strong>Mesquite.R package of modules</strong>. To install this, use the &quot;Check Now for Notices/Installs&quot; menu item in the File Menu, and enter the URL <span class="style11">http://mesquiteproject.org/packages/Mesquite.R/install.xml</span>. Bundled with this are modules to access specific R packages. These are:
+    <ul>
+      <li><strong></strong><strong><a href="ape/aAPEIntro/index.html">ape</a></strong> (Paradis et al.) — access to divergence time rate smoothing (chronopl, chronogram), ancestral state reconstruction (ace), plotting trees (plot). </li>
+      <li><strong><a href="diversitree/aDiversitreeIntro/index.html">diversitree</a></strong> (FitzJohn) — BiSSE estimation of a character's effect on speciation and extinction; simulations of BiSSE and birth/death trees</li>
+    </ul>
+  </li>
+</ol>
+<p class="style4">You will need to start up Mesquite in a special way to have access to R. At present, you will need to start Mesquite by double clicking on a special script file called  &quot;mesquiteForR.sh&quot;, or &quot;mesquiteForR.command&quot;, or &quot;mesquiteForR.bat&quot;. These scripts start up Mesquite in such a way that it can find the resources to run R.</p>
+<p class="style4">Once you have started Mesquite, the available functions in R will appear as regular Mesquite menu items, marked by the R package needed (e.g. &quot;Penalized Likelihood (ape: chronopl)&quot;).</p>
+<p class="style4">DISCLAIMER: some of the R functions that Mesquite.R is employing may have bugs or misbehaviours. We aren't responsible for these. </p>
+<h2 class="style4">Starting Mesquite</h2>
+<p class="style4">Mesquite needs to be started up in a special way in order to have access to R. In this version of Mesquite.R we have provided script files that serve to start up Mesquite:</p>
+<ul class="style4">
+  <li><strong>mesquiteForR.command</strong> — double click on this file to start Mesquite on Mac OS X. Starting Mesquite by double clicking the normal Mesquite application icon will not permit Mesquite to use R (unless you make some adjustments; see Troubleshooting &amp; technical details, below).</li>
+  <li><strong>mesquiteForR.bat</strong> — double click on this file to start Mesquite on Windows. Starting Mesquite by double clicking the normal Mesquite application icon will not permit Mesquite to use R (unless you make some adjustments; see Troubleshooting &amp; technical details, below).</li>
+  <li><strong>mesquiteForR.sh</strong> — use this file to start Mesquite on Linux.</li>
+</ul>
+<h2 class="style4">Troubleshooting &amp; Technical details</h2>
+<p class="style4">Because <em>Mesquite.R</em> involves communication between a Java program (Mesquite) and R, any problems  using it might arise from Mesquite, from R, or from the communication between them. Mesquite will try to inform you where the problem is, but some problems might cause Mesquite to simply crash (in some cases, there is little Mesquite can do about this).</p>
+<p class="style4">On all operating systems you must have installed correctly R, the specialized R packages (such as ape or diversitree), Mesquite, and the <em>Mesquite.R</em> packages. In addition, there are some operating-system quirks that could cause problems.</p>
+<p class="style4">For the technically inclined, the two issues in starting Mesquite for connecting to R is that the environment variable R_HOME may need to be specified or R's needs to be among the PATH variables, and the jri library file needs to be in a known location.</p>
+<p class="style4"><strong>Mac OS X</strong> — You can arrange to use R from Mesquite when Mesquite is started up from the double clickable applications, but you need to make some adjustments. First, the library file <strong>libjri.jnilib</strong> must be present within Mesquite_Folder/lib, and it must be of the version appropriate for your installation of R. Also, R_HOME needs to be specified within a file called environment.plist with a directory called &quot;.MacOSX&quot; within your user's home folder. The environment.plist is a text file that looks like this:</p>
+<blockquote>
+  <pre class="style4"> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br> &lt;!DOCTYPE plist SYSTEM &quot;file://localhost/System/Library/DTDs/PropertyList-1.0.dtd&quot;&gt;<br> &lt;plist version=&quot;1.0&quot;&gt;<br> &lt;dict&gt;<br>  	&lt;key&gt;R_HOME&lt;/key&gt;<br> 	&lt;string&gt;/Library/Frameworks/R.framework/Resources&lt;/string&gt;<br> &lt;/dict&gt;<br> &lt;/plist&gt;</pre>
+</blockquote>
+<p class="style4"><strong>Windows</strong> — The file mesquiteForR.bat must contain the correct path to R. Mesquite, when it starts up, will attempt to check this file and correct it. In case it doesn't, you can try to correct it yourself by opening it in a text editor. For instance, if you are using R 2.10.0, the first line of this file should be &quot;set PATH=%PATH%;C:\Program Files\R\R-2.10.0\bin&quot;. You can also change the version of R used by selecting File&gt;Setup&gt;Set R Version to Use. You can arrange to use R from Mesquite when Mesquite is started up from the double clickable applications, but you need to make some adjustments. First, the library file <strong>jri.dll</strong> must be present within Mesquite_Folder/lib, and it must be of the version appropriate for your installation of R. Also, R must be listed in your PATH environmental variables. </p>
+<h3 class="style4">Source Code</h3>
+<p class="style4">Source code of Mesquite.R is available at <a href="http://svn.mesquiteproject.org:8080/repository/MesquiteR/">http://svn.mesquiteproject.org:8080/repository/MesquiteR/</a></p>
+<h3 class="style4">Citation</h3>
+<p class="style4">If you are using Mesquite to call R packages that do important calculations, then you should cite the R package involved. For instance, if the primary calculation is done by an R package, then we suggest a citation like this: &quot;The &lt;insert analysis name here&gt; analysis was performed by the R package &lt;insert name of R package here&gt; (author, date) version &lt;insert version number here&gt;, run via the Mesquite.R package (Maddison &amp; Lapp, 2009) in Mesquite 2.75 (Maddison &amp; Maddison, 2011)&quot;.</p>
+<p class="style4">Maddison, W.P. &amp; Lapp, H. 2011. Mesquite.R, a package of modules for access to R functions. Version 0.7 http://mesquiteproject.org/packages/Mesquite.R</p>
+<h2 class="style4">Credits</h2>
+<p class="style4"><em>Mesquite.R</em> and RMesquite were stimulated by the <a href="http://www.nescent.org/wg_phyloinformatics/R_Hackathon_1">R Hackathon at NESCENT in 2007</a>, supported by the National Evolutionary Synthesis Center (NESCent), NSF #EF-0423641. Mesquite.R uses the JRI functions of RJava by Simon Urbanek. Source code for JRI/RJava can be obtain from http://www.rforge.net/rJava/ or CRAN. Only two modifications to the source code were made for Mesquite's use: the System.exit(1) call in Rengine was commented out (so as to avoid having to ensure jri.ignore.ule=yes was set for all possible ways to start up Mesquite), and versionCheck outputs to the Mesquite Log the two version numbers if they don't match.</p>
+<p><span class="style4">Mesquite.R is distributed under a <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPL version 2 license</a>.</span></p>
+<p><span class="style4"></span></p>
+<p class="style4">&nbsp;</p>
+</body>
+</html>

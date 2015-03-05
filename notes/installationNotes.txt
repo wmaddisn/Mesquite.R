@@ -1,0 +1,105 @@
+For users:
+
+Mesquite calling R
+============================================
+Mac OS X: 
+
+
+PREPARING MESQUITE
+
+1. insert libjri.jnilib into Mesquite_Folder/lib/
+
+
+2.  the directory R with modules needs to be in Mesquite_Folder/mesquite
+
+3. the directory rosuda needs to be in Mesquite_Folder/org
+
+4. There are two ways that might work to run Mesquite, the quick and dirty, and the elegant.
+
+(a) Quick & Dirty:  Copy mesquiteForRMLink.command into your Mesquite_Folder.  Double click it.  It should start Mesquite, a copy from which you can
+communicate with R.  If it doesn't start, it may have lost its clue to be executable.
+
+(b) Elegant:  With this you can run R from the double-clickable Mesquite application bundle (the one with the icon).
+
+You need to have a file called "environment.plist" in a directory called ".MacOSX" in your home directory, with the contents:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>R_HOME</key>
+	<string>/Library/Frameworks/R.framework/Resources</string>
+</dict>
+</plist>
+
+
+If you have this file already, you need to add the two lines beginning with <key> and <string>.  
+To discover if you have the file, in the Finder choose Go>Go To Folder and enter ~/.MacOSX  If you have the environment.plist file, 
+it will be shown to you.  Otherwise you'll get the message "Folder cannot be found".
+
+If you don't have this directory and file already, you need to make it.  How to make this directory and file?
+
+GEEK-STYLE: from the terminal use mkdir .MacOSX to make the directory, cd into it, then use vi to make the file.
+NONGEEK-STYLE: open TextWrangler, and paste the XML into the window.  Request to Save the file, and choose "New Folder", 
+and enter ".MacOSX" as the name of the folder. Save the file as "environment.plist".
+
+
+
+PREPARING R
+
+Download and install R from http://cran.r-project.org/.  You'll want the GUI version.
+
+Start up the GUI for R (it's called R and is in Applications).  
+Go to the menu Packages & Data, and select Package Installer.  
+From the Repository CRAN (binaries) ask to get the list.  
+Install ape, diversitree, geiger, apTreeshape and any others.  
+MAKE SURE "install dependencies" is checked before you hit Install Selected.
+
+RUNNING MESQUITE TO CALL R
+
+If you are using the quick and dirty way to start Mesquite, double click mesquiteForR.command.  
+Otherwise, start Mesquite normally by double clicking the application within Mesquite_Folder.  
+
+============================================
+
+Windows:
+
+PREPARING MESQUITE
+
+1. insert jri.dll into Mesquite_Folder/lib/
+
+
+2. place mesquiteForR.bat into Mesquite_Folder.
+
+3.  the directory R with modules needs to be in Mesquite_Folder/mesquite
+
+4. the directory rosuda needs to be in Mesquite_Folder/org
+
+
+PREPARING R
+
+Download and install R from http://cran.r-project.org/.  You'll want the GUI version.
+
+Start up the GUI for R (it's called R).  
+Go to the menu Packages & Data, and select Package Installer.  
+From the Repository CRAN (binaries) ask to get the list.  
+Install ape, diversitree, geiger, apTreeshape and any others.  
+MAKE SURE "install dependencies" is checked before you hit Install Selected.
+
+RUNNING MESQUITE TO CALL R
+
+Start Mesquite by double clicking mesquiteForR.bat within Mesquite_Folder.  
+A simple test that the calls to R are working is to open a tree window, and show a tree with branch lengths
+defined and with branches drawn proportional to length.  Then choose Alter/Transform Branch Lengths>NPRS.
+A dialog box should appear and when you say OK, it should modify the tree's branch lengths.
+
+If it does not seem to work (e.g. Mesquite crashes or hangs), one possible problem is that the path to R
+is not properly indicated in the first line of the file mesquiteForRMLink.bat. If needed, edit the path there.
+
+For R 2.7.0, this should be the first line of the batch file:
+set PATH=%PATH%;C:/PROGRA~1/R/R-27~1.0\bin;C:/PROGRA~1/R/R-27~1.0\lib
+
+For R 2.6.1,this is the first line
+set PATH=%PATH%;C:/PROGRA~1/R/R-26~1.1\bin;C:/PROGRA~1/R/R-26~1.1\lib
+

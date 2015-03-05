@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<mesquite>
+	<MessagesFromHome>
+		<version>1</version>
+		<notice><!--Mesquite.R install -->
+			<forVersion>272</forVersion>
+			<forBuildNumberAtLeast>527</forBuildNumberAtLeast>
+			<noticeNumber>2</noticeNumber>
+			<messageType>update</messageType>
+			<identity>Mesquite.R</identity>
+			<updateVersion>003</updateVersion>
+			<packageName>Mesquite.R v. 0.7</packageName>
+			<explanation>
+			<![CDATA[<img src="http://mesquiteproject.org/packages/Mesquite.R/splash.gif"><p>
+			Mesquite.R enables Mesquite to communicate with R.  Version 0.7 is now available; 
+			it resolves an incompatibility with the latest version of diversitree.  
+			For more information about Mesquite.R, see the 
+			<a href = "http://mesquiteproject.org/packages/Mesquite.R/">Mesquite.R web page</a>.
+			]]>
+			</explanation>
+				<install>
+					<location>org</location>
+					<file>rosuda</file>
+					<url>http://mesquiteproject.org/packages/Mesquite.R/org.rosuda.zip</url>
+					<treatment>unzip</treatment>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<location>mesquite</location>
+					<file>R</file>
+					<url>http://mesquiteproject.org/packages/Mesquite.R/mesquite.R.zip</url>
+					<treatment>unzip</treatment>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<forOS>
+						<os>Windows</os>
+					</forOS>
+					<location></location>
+					<file>mesquiteForR.bat</file>
+					<url>http://mesquiteproject.org/packages/Mesquite.R/mesquiteForR.bat</url>
+					<treatment>asis</treatment>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<forOS>
+						<os>Mac OS X</os>
+					</forOS>
+					<location></location>
+					<file>mesquiteForR.command</file>
+					<url>http://mesquiteproject.org/packages/Mesquite.R/mesquiteForR.command</url>
+					<treatment>asis</treatment>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<forOS>
+						<os>Mac OS X</os>
+					</forOS>
+					<executeInMesquiteFolder>chmod +x mesquiteForR.command</executeInMesquiteFolder>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<forOS>
+						<os>other</os>
+					</forOS>
+					<location></location>
+					<file>mesquiteForR.sh</file>
+					<url>http://mesquiteproject.org/packages/Mesquite.R/mesquiteForR.sh</url>
+					<treatment>asis</treatment>
+					<updateVersion>003</updateVersion>
+				</install>
+				<install>
+					<forOS>
+						<os>other</os>
+					</forOS>
+					<executeInMesquiteFolder>chmod +x mesquiteForR.sh</executeInMesquiteFolder>
+					<updateVersion>003</updateVersion>
+				</install>
+
+		</notice>
+		</MessagesFromHome>
+</mesquite>

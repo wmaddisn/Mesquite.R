@@ -1,0 +1,547 @@
+#NEXUS
+[written Wed Sep 14 10:11:31 PDT 2011 by Mesquite  version 2.74+ (build 558) at Thrandina.local/192.168.0.146 (Wayne Maddison)]
+
+BEGIN TAXA;
+	TITLE Untitled_Block_of_Taxa;
+	DIMENSIONS NTAX=26;
+	TAXLABELS
+		taxon_1 taxon_2 taxon_3 taxon_4 taxon_5 clade_A taxon_7 taxon_10 taxon_11 taxon_13 taxon_14 taxon_17 taxon_18 taxon_19 taxon_20 taxon_21 taxon_22 taxon_23 taxon_24 taxon_25 taxon_26 taxon_27 taxon_28 taxon_29 taxon_30 taxon_31 
+	;
+	IDS WM1148f47d2061 WM1148f47d2072 WM1148f47d2073 WM1148f47d2074 WM1148f47d2075 WM1148f47d2076 WM1148f47d2077 WM1148f47d20710 WM1148f47d20711 WM1148f47d20713 WM1148f47d20714 WM1148f47d20717 WM1148f47d20718 WM1148f47d20719 WM1148f47d20720 WM1148f47d20721 WM1148f47d20722 WM1148f47d20723 WM1148f47d20724 WM1148f47d20725 WM1148f47d20726 WM1148f47d20727 WM1148f47d20728 WM1148f47d20729 WM1148f47d20830 WM1148f47d20831 ;
+	BLOCKID WM1148f47d2081;
+
+END;
+
+
+BEGIN CHARACTERS;
+	TITLE  'Matrix in file "04-BiSSEViewer.nex"';
+	DIMENSIONS  NCHAR=1;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1";
+	MATRIX
+	taxon_1   0
+	taxon_2   1
+	taxon_3   0
+	taxon_4   0
+	taxon_5   0
+	clade_A   (0 1)
+	taxon_7   0
+	taxon_10  1
+	taxon_11  1
+	taxon_13  1
+	taxon_14  1
+	taxon_17  1
+	taxon_18  0
+	taxon_19  1
+	taxon_20  0
+	taxon_21  0
+	taxon_22  0
+	taxon_23  1
+	taxon_24  1
+	taxon_25  1
+	taxon_26  1
+	taxon_27  1
+	taxon_28  1
+	taxon_29  1
+	taxon_30  1
+	taxon_31  1
+
+;
+	IDS WM1148f4828fe0 ;
+	BLOCKID WM11490f84ae00;
+
+
+END;
+BEGIN CHARACTERS;
+	TITLE  StateFrequencies;
+	DIMENSIONS  NCHAR=1;
+	FORMAT DATATYPE = MERISTIC ITEMS = (state0 state1 stateUnknown )  GAP = x MISSING = ?;
+	MATRIX
+	taxon_1    (1 0 0)
+	taxon_2    (0 1 0)
+	taxon_3    (1 0 0)
+	taxon_4    (1 0 0)
+	taxon_5    (1 0 0)
+	clade_A    (1 6 0)
+	taxon_7    (1 0 0)
+	taxon_10   (0 1 0)
+	taxon_11   (0 1 0)
+	taxon_13   (0 1 0)
+	taxon_14   (0 1 0)
+	taxon_17   (0 1 0)
+	taxon_18   (1 0 0)
+	taxon_19   (0 1 0)
+	taxon_20   (1 0 0)
+	taxon_21   (1 0 0)
+	taxon_22   (1 0 0)
+	taxon_23   (0 1 0)
+	taxon_24   (0 1 0)
+	taxon_25   (0 1 0)
+	taxon_26   (0 1 0)
+	taxon_27   (0 1 0)
+	taxon_28   (0 1 0)
+	taxon_29   (0 1 0)
+	taxon_30   (0 1 0)
+	taxon_31   (0 1 0)
+
+;
+	IDS WM125662c57ef23 ;
+	BLOCKID WM125662c1d910;
+
+
+END;
+BEGIN TREES;
+	Title 'Trees from "04-BiSSEViewer.nex"';
+	LINK Taxa = Untitled_Block_of_Taxa;
+	TRANSLATE
+		1 taxon_1,
+		2 taxon_2,
+		3 taxon_3,
+		4 taxon_4,
+		5 taxon_5,
+		6 clade_A,
+		7 taxon_7,
+		8 taxon_10,
+		9 taxon_11,
+		10 taxon_13,
+		11 taxon_14,
+		12 taxon_17,
+		13 taxon_18,
+		14 taxon_19,
+		15 taxon_20,
+		16 taxon_21,
+		17 taxon_22,
+		18 taxon_23,
+		19 taxon_24,
+		20 taxon_25,
+		21 taxon_26,
+		22 taxon_27,
+		23 taxon_28,
+		24 taxon_29,
+		25 taxon_30,
+		26 taxon_31;
+	TREE 'Tree+' = (((((7:5.187000000000067,17:5.186999999999937):2.4919999999998366,(2:5.19600000000007,((26:2.6009999999998246,11:2.6009999999998246):2.269999999999861,21:4.870999999999961):0.32500000000000023):2.4829999999999215):0.6730000000000005,(6:7.360999999999658,((18:0.8660000000000007,(12:0.0010,19:0.0010):0.8650000000000007):1.0020000000000004,(13:1.059999999999994,4:1.059999999999994):0.8080000000000006):5.4930000000000865):0.9910000000000008):2.2739999999998606,((((8:0.21500000000000016,24:0.21500000000000016):1.1809999999999807,16:1.395999999999957):6.895000000000504,22:8.291000000000466):2.2449999999998638,((9:0.5600000000000004,14:0.5600000000000004):7.632000000000883,3:8.192000000000526):2.343999999999853):0.09000000000000007):2.389999999999848,((5:3.7479999999996982,(15:0.03300000000000002,1:0.03300000000000002):3.714999999999702):5.209999999999916,((23:0.5840000000000004,10:0.5840000000000004):7.191000000000736,(20:1.5889999999999358,25:1.5889999999999358):6.185999999999934):1.1829999999999805):4.0579999999997804):0.0;
+
+END;
+
+
+BEGIN CODONS;
+	CODESET * UNTITLED  (CHARACTERS = 'Matrix in file "04-BiSSEViewer.nex"')  =  universal:  1;
+
+
+END;
+
+BEGIN ASSUMPTIONS;
+	TYPESET * UNTITLED  (CHARACTERS = 'Matrix in file "04-BiSSEViewer.nex"')  =  unord:  1;
+TYPESET * UNTITLED  (CHARACTERS = StateFrequencies)  =  Linear_Meristic:  1;
+
+END;
+
+BEGIN MESQUITECHARMODELS;
+	ProbModelSet * UNTITLED  (CHARACTERS = 'Matrix in file "04-BiSSEViewer.nex"')  =  'Mk1 (est.)':  1;
+END;
+
+BEGIN NOTES;
+
+	CHARACTERS = 'Matrix in file "04-BiSSEViewer.nex"' TAXA = Untitled_Block_of_Taxa;
+	SU  T = 6 C = 1 N = color I = 5;
+
+	CHARACTERS = StateFrequencies TAXA = Untitled_Block_of_Taxa;
+
+END;
+
+Begin MESQUITE;
+		MESQUITESCRIPTVERSION 2;
+		TITLE AUTO;
+		tell ProjectCoordinator;
+		timeSaved 1316020292103;
+		getEmployee #mesquite.minimal.ManageTaxa.ManageTaxa;
+		tell It;
+			setID 0 6732219986260810463 WM1148f47d2081;
+		endTell;
+		getEmployee #mesquite.charMatrices.ManageCharacters.ManageCharacters;
+		tell It;
+			setID 0 444104661901299517 WM11490f84ae00;
+			mqVersion 274;
+			checksumv 0 2 1253633987 WM11490f84ae00  getNumChars 1 numChars 1 getNumTaxa 26 numTaxa 26   short true   bits 3   states 3   sumSquaresStatesOnly 82.0 sumSquares 82.0   NumFiles 1 NumMatrices 2;
+			mqVersion;
+			setID 1 6032942991702004461 WM125662c1d910;
+			mqVersion 274;
+			checksumv 1 2 3005909414 WM125662c1d910  numChars 1   numItems 3   min  0   max  6   NumFiles 1 NumMatrices 2;
+			mqVersion;
+		endTell;
+		getWindow;
+		tell It;
+			suppress;
+			setResourcesState false false 72;
+			setPopoutState 256;
+			setExplanationSize 0;
+			setAnnotationSize 0;
+			setFontIncAnnot 0;
+			setFontIncExp 0;
+			setSize 1209 576;
+			setLocation 8 22;
+			setFont SanSerif;
+			setFontSize 10;
+			getToolPalette;
+			tell It;
+			endTell;
+			desuppress;
+		endTell;
+		getEmployee  #mesquite.trees.BasicTreeWindowCoord.BasicTreeWindowCoord;
+		tell It;
+			makeTreeWindow #6732219986260810463  #mesquite.trees.BasicTreeWindowMaker.BasicTreeWindowMaker;
+			tell It;
+				suppressEPCResponse;
+				setTreeSource  #mesquite.trees.StoredTrees.StoredTrees;
+				tell It;
+					setTreeBlock 1;
+					toggleUseWeights off;
+				endTell;
+				setAssignedID 786.1187814845004.4817563795317733133;
+				getTreeWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 1137 509;
+					setLocation 8 22;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.trees.BasicTreeWindowMaker.BasicTreeWindow.arrow;
+					endTell;
+					setActive;
+					getTreeDrawCoordinator #mesquite.trees.BasicTreeDrawCoordinator.BasicTreeDrawCoordinator;
+				tell It;
+					suppress;
+					setTreeDrawer  #mesquite.trees.ArcTree.ArcTree;
+					tell It;
+						setNodeLocs #mesquite.trees.NodeLocsStandard.NodeLocsStandard;
+						tell It;
+							inhibitStretchToggle on;
+							branchLengthsToggle on;
+							toggleScale on;
+							toggleBroadScale off;
+							toggleCenter off;
+							toggleEven off;
+						endTell;
+						setEdgeWidth 8;
+						orientUp;
+					endTell;
+					setBackground White;
+					setBranchColor Black;
+					showNodeNumbers off;
+					showBranchColors on;
+					labelBranchLengths off;
+					centerBrLenLabels on;
+					showBrLensUnspecified on;
+					showBrLenLabelsOnTerminals on;
+					setBrLenLabelColor 0 0 255;
+					setNumBrLenDecimals 6;
+					desuppress;
+					getEmployee #mesquite.trees.BasicDrawTaxonNames.BasicDrawTaxonNames;
+					tell It;
+						setColor Black;
+						toggleColorPartition on;
+						toggleShadePartition off;
+						toggleShowFootnotes on;
+						toggleNodeLabels on;
+						toggleCenterNodeNames off;
+						toggleShowNames on;
+						namesAngle ?;
+					endTell;
+				endTell;
+					setTreeNumber 1;
+					setTree '(((((7:5.187000000000067,17:5.186999999999937):2.4919999999998366,(2:5.19600000000007,((26:2.6009999999998246,11:2.6009999999998246):2.269999999999861,21:4.870999999999961):0.32500000000000023):2.4829999999999215):0.6730000000000005,(6:7.360999999999658,((18:0.8660000000000007,(12:0.0010,19:0.0010):0.8650000000000007):1.0020000000000004,(13:1.059999999999994,4:1.059999999999994):0.8080000000000006):5.4930000000000865):0.9910000000000008):2.2739999999998606,((((8:0.21500000000000016,24:0.21500000000000016):1.1809999999999807,16:1.395999999999957):6.895000000000504,22:8.291000000000466):2.2449999999998638,((9:0.5600000000000004,14:0.5600000000000004):7.632000000000883,3:8.192000000000526):2.343999999999853):0.09000000000000007):2.389999999999848,((5:3.7479999999996982,(15:0.03300000000000002,1:0.03300000000000002):3.714999999999702):5.209999999999916,((23:0.5840000000000004,10:0.5840000000000004):7.191000000000736,(20:1.5889999999999358,25:1.5889999999999358):6.185999999999934):1.1829999999999805):4.0579999999997804):0.0;';
+					setDrawingSizeMode 1;
+					toggleLegendFloat on;
+					toggleTextOnTree off;
+					showWindow;
+					newAssistant  #mesquite.ancstates.TraceCharacterHistory.TraceCharacterHistory;
+				tell It;
+					suspend ;
+					setDisplayMode  #mesquite.ancstates.ShadeStatesOnTree.ShadeStatesOnTree;
+					tell It;
+						toggleLabels off;
+						toggleGray off;
+					endTell;
+					setHistorySource  #mesquite.ancstates.RecAncestralStates.RecAncestralStates;
+					tell It;
+						getCharacterSource  #mesquite.charMatrices.CharSrcCoordObed.CharSrcCoordObed;
+						tell It;
+							setCharacterSource #mesquite.charMatrices.StoredCharacters.StoredCharacters;
+							tell It;
+								setDataSet #444104661901299517;
+							endTell;
+						endTell;
+						setMethod  #mesquite.parsimony.ParsAncestralStates.ParsAncestralStates;
+						tell It;
+							setModelSource  #mesquite.parsimony.CurrentParsModels.CurrentParsModels;
+							toggleMPRsMode off;
+						endTell;
+					endTell;
+					setCharacter 1;
+					setMapping 1;
+					toggleShowLegend on;
+					toggleGray off;
+					toggleWeights on;
+					setInitialOffsetX 4;
+					setInitialOffsetY -221;
+					setLegendWidth 142;
+					setLegendHeight 161;
+					resume ;
+					modifyColors  1 1  70 235 97 10 0  165 168 167;
+				endTell;
+					newWindowAssistant  #mesquite.diverse.CharAssocDivViewer.CharAssocDivViewer;
+				tell It;
+					setCalculator  #mesquite.R.MesquiteCallsR.diversitree.BiSSELikelihoodTUnresolved.BiSSELikelihoodTUnresolved;
+					tell It;
+						suspend ;
+						setParameters  ?  ?  ?  ?  =2 ?  ?  =4;
+						setReportMode ln_Likelihood;
+						resume ;
+					endTell;
+					getCharSource  #mesquite.charMatrices.CharSrcCoordObed.CharSrcCoordObed;
+					tell It;
+						setCharacterSource #mesquite.charMatrices.StoredCharacters.StoredCharacters;
+						tell It;
+							setDataSet #6032942991702004461;
+						endTell;
+					endTell;
+					setCharacter 1;
+					doCounts;
+				endTell;
+				endTell;
+				desuppressEPCResponse;
+				getEmployee #mesquite.trees.ColorBranches.ColorBranches;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.ornamental.BranchNotes.BranchNotes;
+				tell It;
+					setAlwaysOn off;
+				endTell;
+				getEmployee #mesquite.ornamental.ColorTreeByPartition.ColorTreeByPartition;
+				tell It;
+					colorByPartition off;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocDoubles.DrawTreeAssocDoubles;
+				tell It;
+					setOn on;
+					setDigits 4;
+					writeAsPercentage off;
+					toggleCentred on;
+					toggleHorizontal on;
+					toggleWhiteEdges on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocStrings.DrawTreeAssocStrings;
+				tell It;
+					setOn on;
+					toggleCentred on;
+					toggleHorizontal on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.trees.TreeInfoValues.TreeInfoValues;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		getEmployee  #mesquite.charMatrices.BasicDataWindowCoord.BasicDataWindowCoord;
+		tell It;
+			showDataWindow #444104661901299517 #mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindowMaker;
+			tell It;
+				getWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 1137 509;
+					setLocation 8 22;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.arrow;
+					endTell;
+					setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.arrow;
+					colorCells  #mesquite.charMatrices.NoColor.NoColor;
+					colorRowNames  #mesquite.charMatrices.ColorCells.ColorCells;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+					colorColumnNames  #mesquite.charMatrices.CharGroupColor.CharGroupColor;
+					colorText  #mesquite.charMatrices.NoColor.NoColor;
+					setBackground White;
+					toggleShowNames on;
+					toggleShowTaxonNames on;
+					toggleTight off;
+					toggleThinRows off;
+					toggleShowChanges on;
+					toggleSeparateLines off;
+					toggleShowStates on;
+					toggleAutoWCharNames on;
+					toggleAutoTaxonNames off;
+					toggleShowDefaultCharNames off;
+					toggleConstrainCW on;
+					setColumnWidth 16;
+					toggleBirdsEye off;
+					toggleShowPaleGrid off;
+					toggleShowPaleCellColors off;
+					togglePaleInapplicable on;
+					toggleShowBoldCellText off;
+					toggleAllowAutosize on;
+					toggleColorsPanel off;
+					toggleDiagonal on;
+					setDiagonalHeight 80;
+					toggleLinkedScrolling on;
+					toggleScrollLinkedTables off;
+				endTell;
+				showWindow;
+				getEmployee #mesquite.charMatrices.ColorByState.ColorByState;
+				tell It;
+					setStateLimit 9;
+					toggleUniformMaximum on;
+				endTell;
+				getEmployee #mesquite.categ.StateNamesStrip.StateNamesStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.AnnotPanel.AnnotPanel;
+				tell It;
+					togglePanel off;
+				endTell;
+				getEmployee #mesquite.charMatrices.CharReferenceStrip.CharReferenceStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.QuickKeySelector.QuickKeySelector;
+				tell It;
+					autotabOff;
+				endTell;
+				getEmployee #mesquite.charMatrices.SelSummaryStrip.SelSummaryStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.categ.SmallStateNamesEditor.SmallStateNamesEditor;
+				tell It;
+					panelOpen true;
+				endTell;
+			endTell;
+			showDataWindow #6032942991702004461 #mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindowMaker;
+			tell It;
+				getWindow;
+				tell It;
+					popAsTile false;
+					popOut;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 487 207;
+					setLocation 373 694;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.arrow;
+					endTell;
+					setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.arrow;
+					colorCells  #mesquite.charMatrices.NoColor.NoColor;
+					colorRowNames  #mesquite.charMatrices.ColorCells.ColorCells;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+					colorColumnNames  #mesquite.charMatrices.CharGroupColor.CharGroupColor;
+					colorText  #mesquite.charMatrices.NoColor.NoColor;
+					setBackground White;
+					toggleShowNames on;
+					toggleShowTaxonNames on;
+					toggleTight off;
+					toggleThinRows off;
+					toggleShowChanges on;
+					toggleSeparateLines off;
+					toggleShowStates on;
+					toggleAutoWCharNames on;
+					toggleAutoTaxonNames off;
+					toggleShowDefaultCharNames off;
+					toggleConstrainCW on;
+					toggleBirdsEye off;
+					toggleShowPaleGrid off;
+					toggleShowPaleCellColors off;
+					togglePaleInapplicable on;
+					toggleShowBoldCellText off;
+					toggleAllowAutosize on;
+					toggleColorsPanel off;
+					toggleLinkedScrolling on;
+					toggleScrollLinkedTables off;
+				endTell;
+				showWindow;
+				getWindow;
+				tell It;
+					forceAutosize;
+				endTell;
+				getEmployee #mesquite.charMatrices.ColorByState.ColorByState;
+				tell It;
+					setStateLimit 9;
+					toggleUniformMaximum on;
+				endTell;
+				getEmployee #mesquite.charMatrices.AnnotPanel.AnnotPanel;
+				tell It;
+					togglePanel off;
+				endTell;
+				getEmployee #mesquite.charMatrices.CharReferenceStrip.CharReferenceStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.SelSummaryStrip.SelSummaryStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.meristic.MerItemsEditInfo.MerItemsEditInfo;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		newAssistant  #mesquite.basic.ExamplesNavigator.ExamplesNavigator;
+		tell It;
+			setNextFileName 'diversitree03-simulatingTrees.nex';
+			setPrevFileName 'diversitree01-BiSSEresolved.nex';
+			getWindow;
+			tell It;
+					popAsTile false;
+					popOut;
+					setExplanationSize 0;
+					setAnnotationSize 0;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 336 222;
+					setLocation 8 689;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+					endTell;
+				setExplanation 'Here the BiSSE likelihood calculations are done on a tree with terminally unresolved clades using diversitree (by R FitzJohn).  This example is like the previous but a clade of 7 species is assumed to be internally unresolved, and is here represented by a single taxon (clade A).  ^n^nThe states of the character are represented in a meristic matrix of species frequencies.  This matrix is here called "StateFrequencies".  See web page linked below for instructions as to how to prepare this meristic matrix.';
+				setTitle BiSSE_Unresolved;
+				toggleFileNames off;
+				setPrevButtonName Previous;
+				setNextButtonName Next;
+				addWebLink Matrix  'project:../diversitree/aDiversitreeIntro/index.html';
+			endTell;
+			showWindow;
+		endTell;
+		endTell;
+end;
+
+

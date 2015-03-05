@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mesquite.R: diversitree</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
+.style4 {font-family: Arial, Helvetica, sans-serif}
+.style5 {font-size: x-large}
+.style6 {font-family: Arial, Helvetica, sans-serif; font-style: italic; }
+.style7 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<table width="100%" cellspacing="8">
+  <tr>
+    <td width="300" class="style4"><img src="splash.gif" alt="logo" width="164" height="64"></td>
+    <td width="100%" bgcolor="#0099FF" class="style4"> <p class="style5">&nbsp;</p>    </td>
+  </tr>
+</table>
+<h1 class="style1">Using the R package &quot;diversitree&quot; from Mesquite</h1>
+<p><span class="style6">diversitree citation: FitzJohn, R. 2009. diversitree: comparative phylogenetic tests of diversification. An R package. http://www.zoology.ubc.ca/prog/diversitree<strong><br>
+</strong><br>
+<span class="style4">Mesquite.R's translation package (</span><em><em>version 0.6)</em></em> for diversitree:
+W. Maddison.</span><span class="style4"> <a href="http://mesquiteproject.org/packages/Mesquite.R/MesquiteCallsR/diversitree/index.html">Latest version</a></span></p>
+<p class="style4"><strong>diversitree</strong> is an R package written by Rich FitzJohn that analyzes species diversification as it relates to species traits. Please see <a href="http://www.zoology.ubc.ca/prog/diversitree">diversitree's</a> web page for more details, and for instructions as to how to install it in R. </p>
+<hr>
+<p class="style4">To use the ape package from Mesquite you need to  install the <a href="../../MesquiteR.html">Mesquite.R package</a>. When this is installed, the modules to link to diversitree are also installed. Not all diversitree functions are accessible in this way. We have chosen functions we felt would be of most interest; feel free to propose others to be made accessible.</p>
+<p class="style4">Examples files are included with Mesquite.R, in the directory <a href="../../examples/">mesquite/R/MesquiteCallsR/examples</a>, which will be in your Mesquite_Folder once Mesquite.R is installed.</p>
+<h3 class="style4"><strong>Likelihood inference of speciation and extinction rates</strong></h3>
+<p class="style4">diversitree can infer speciation and extinction rates using the BiSSE model (Maddison, W.P., P.E. Midford &amp; S.P. Otto. 2007. Estimating a binary character's effect on speciation and extinction. Systematic Biology 56:701-710). diversitree's BiSSE analyses can be accessed in the same way as the BiSSE analyses of Mesquite's built-in package <em><a href="http://mesquiteproject.org/Mesquite_Folder/docs/mesquite/Diversification/diversification.html#bisseCalculations">diverse</a></em>, for example through the Character-Associated Diversification menu item under Analysis in a tree window. There are two choices</p>
+<ul>
+  <li class="style4"><strong>BiSSE Likelihood (diversitree)</strong> — for a completely resolved phylogenetic tree and complete character data. Requires a tree and binary character without missing data. This should give approximately the same results as Mesquite's built-in package <em>diverse</em>. This analysis assumes that each terminal taxon in the tree is a species, and that you have a census of all extant species. For example, here: <br>
+      <img src="images/diversitreeBiSSEr.jpg"><br>
+      there are five species with states 0 or 1, and a small tree. The data matrix is a standard categorical matrix.<br>
+      <br>
+  </li>
+  <li class="style4"><strong>BiSSE for Terminally Unresolved (diversitree)</strong> — for trees with terminally unresolved clades and/or missing data (FitzJohn, R.G., W.P. Maddison &amp; S.P. Otto.  In press.  Estimating trait-dependent speciation and extinction rates from incomplete phylogenies.  Systematic Biology). Requires a special meristic character indicating for each terminal taxon the numbers of species it represents with states 0, 1, or missing data. This analysis assumes that each terminal taxon is a species or unresolved clade. For example, here:<br>
+           <img src="images/diversitreeBiSSEu.jpg"><br>
+      there are five genera. The meristic matrix has three items indicating the number of species with state 0, state 1, and unknown state. Thus genusS has 10 species, of which 3 have state 0, 5 have state 1, and 2 have unknown state. An explanation is give below as to <span class="style4">how to construct this meristic matrix. [Of course, the terminal taxa do not need to represent genera. In this example, what is listed as genusT could represent merely a single species, and what is listed as genusS could be a clade at any rank.<br>
+  </span></li>
+</ul>
+<p class="style4">Except for the different character types used (binary for resolved, meristic for terminally unresolved) these two variants are used in much the same way. Both will present a dialog in which you can set parameter constraints if desired. </p>
+<h3 class="style4">How to prepare the meristic matrix for &quot;<strong>BiSSE for Terminally Unresolved (diversitree)</strong>&quot;</h3>
+<p class="style4">There are two ways to prepare the meristic matrix summarizing states in terminal taxa. You can build it directly (instructions later) or you can base it on a binary matrix you might already have that summarizes distribution of states 0 and 1 among terminal taxa. For instance, suppose you have this matrix for the five genera (A, below).</p>
+<p align="left" class="style4">A <img src="images/mer1.jpg" width="168" height="111">    B <img src="images/mer2.jpg" width="149" height="111">    C <img src="images/mer3.jpg" width="227" height="111">    D <img src="images/mer4.jpg" width="184" height="112"></p>
+<p class="style4">This says what states are found in each genus. You need to translate this to frequencies of species with each state in each terminal taxon. First, make a new meristic matrix by selecting New Empty Matrix in the Characters menu. If you say you want one character, you will see a matrix like that in B, above. </p>
+<p class="style4">In the Matrix menu for this matrix, select Alter/Transform Data&gt;Binary to Freq. (for diversitree BiSSE Unresolved). You will be asked to select your binary character. After you're done, a new character should appear in the meristic matrix (C, above). Next, delete the first character (D, above).</p>
+<p class="style4">The three items in this matrix represent the number of species in each terminal taxon with states 0, 1 and unknown. Edit these to match the number of species:</p>
+<p align="center" class="style4"><img src="images/mer5.jpg" width="184" height="112"></p>
+<p class="style4">Remember to put spaces between the numbers. &quot;(352)&quot; is not the same as &quot;(3 5 2)&quot;.</p>
+<p class="style4">To build such a meristic matrix directly, you can ask for a new Meristic matrix, then turn on the Matrix Info Panel by touching the blue &quot;i&quot; (red arrow, below):</p>
+<p align="center" class="style4"><img src="images/items.jpg" width="478" height="257"></p>
+<p class="style4">Then, using the &quot;+&quot; button under Items, add two more items. You can name them if you want &quot;state0&quot;, &quot;state1&quot;, and &quot;stateUnknown&quot;. Then, edit the matrix to indicate frequencies of species with 0, 1 and unknown in each terminal taxon.</p>
+<h3 class="style7">Simulation of trees</h3>
+<p class="style4">diversitree can simulate trees either under a simple birth/death process (similar to Mesquite's built in &quot;Birth/Death Process Trees&quot;) or under a BiSSE model in which speciation and extinction rates depend on the state of a binary character.</p>
+<p class="style4">Birth-death trees can be simulated wherever tree simulation can be done. Select &quot;<strong>Simulate B/D Trees (diversitree: tree.bd)</strong>&quot; as the tree simulator. Birth-death trees simulate speciation with constant rates of speciation and extinction.</p>
+<p class="style4">Trees under the BiSSE model can be simulated along with the characters controlling diversification by choosing Trees &amp; Diversification Characters under the Trees menu. Select the option <strong>Simulate BiSSE Trees (diversitree: tree.bisse)</strong>. This simulation uses the same model (with some modifications) as Mesquite's built-in simulator &quot;BiSSE Trees &amp; Characters&quot;.</p>
+<h3 class="style4">Citation</h3>
+<p class="style4">The primary calculations are done by the packages in R. Thus, we suggest a citation like this: &quot;The &lt;insert analysis name here&gt; analysis was performed by the R package diversitree (FitzJohn, 2009) version &lt;insert version number here&gt;, run via the Mesquite.R package (Maddison &amp; Lapp, 2011) in Mesquite 2.75 (Maddison &amp; Maddison, 2011).&quot;</p>
+<p class="style4">&nbsp;</p>
+<hr>
+<p><span class="style4">Mesquite.R's translation package for diversitree is distributed under a <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPL version 2 license</a>.</span></p>
+<p><span class="style4">DISCLAIMER: some of the R functions that Mesquite.R is employing may have bugs or misbehaviours; the authors of Mesquite are not responsible for such problems. BUG REPORTS: If a result is supplied but it seems incorrect, please contact both the authors of the R package and the authors of the Mesquite interface to the R package. If there is a crash, please contact first the authors of the Mesquite interface to the R package. </span></p>
+<p>&nbsp;</p>
+<p class="style7">&nbsp;</p>
+<p class="style4">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,214 @@
+#NEXUS
+[written Wed Sep 14 10:03:14 PDT 2011 by Mesquite  version 2.74+ (build 558) at Thrandina.local/192.168.0.146 (Wayne Maddison)]
+
+BEGIN TAXA;
+	TITLE Untitled_Block_of_Taxa;
+	DIMENSIONS NTAX=14;
+	TAXLABELS
+		magnirostris conirostris difficilis scandens fortis fuliginosa pallida fusca parvulus pauper Pinaroloxias Platyspiza psittacula olivacea 
+	;
+	IDS WM1168381dc725 WM1168381dc866 WM1168381dc877 WM1168381dc8e8 WM1168381dc8f9 WM1168381dc8f10 WM1168381dc9011 WM1168381dc9312 WM1168381dc9e13 WM1168381dc9f14 WM1168381dc9f15 WM1168381dca016 WM1168381dca217 WM116838347fa18 ;
+	BLOCKID WM1168381dc602;
+
+END;
+
+
+BEGIN TREES;
+	Title Imported_trees;
+	LINK Taxa = Untitled_Block_of_Taxa;
+	TRANSLATE
+		1 magnirostris,
+		2 conirostris,
+		3 difficilis,
+		4 scandens,
+		5 fortis,
+		6 fuliginosa,
+		7 pallida,
+		8 fusca,
+		9 parvulus,
+		10 pauper,
+		11 Pinaroloxias,
+		12 Platyspiza,
+		13 psittacula,
+		14 olivacea;
+	TREE Imported_tree_0 = ((((((((((6:0.055,5:0.055):0.055,1:0.11):0.07333,2:0.18333):0.00917,4:0.1925):0.0355,3:0.228):0.10346,(7:0.08667,((9:0.02,13:0.02):0.015,10:0.035):0.05167):0.24479):0.13404,12:0.4655):0.06859,8:0.53409):0.04924,11:0.58333):0.29744,14:0.88077);
+
+END;
+
+
+Begin MESQUITE;
+		MESQUITESCRIPTVERSION 2;
+		TITLE AUTO;
+		tell ProjectCoordinator;
+		timeSaved 1316019794494;
+		getEmployee #mesquite.minimal.ManageTaxa.ManageTaxa;
+		tell It;
+			setID 0 5494437354148171170 WM1168381dc602;
+		endTell;
+		getWindow;
+		tell It;
+			suppress;
+			setResourcesState false false 100;
+			setPopoutState 400;
+			setExplanationSize 0;
+			setAnnotationSize 0;
+			setFontIncAnnot 0;
+			setFontIncExp 0;
+			setSize 1495 805;
+			setLocation 44 26;
+			setFont SanSerif;
+			setFontSize 10;
+			getToolPalette;
+			tell It;
+			endTell;
+			desuppress;
+		endTell;
+		getEmployee  #mesquite.trees.BasicTreeWindowCoord.BasicTreeWindowCoord;
+		tell It;
+			makeTreeWindow #5494437354148171170  #mesquite.trees.BasicTreeWindowMaker.BasicTreeWindowMaker;
+			tell It;
+				suppressEPCResponse;
+				setTreeSource  #mesquite.trees.StoredTrees.StoredTrees;
+				tell It;
+					setTreeBlock 1;
+					toggleUseWeights off;
+				endTell;
+				setAssignedID 944.1196207368096.1188714930058062945;
+				getTreeWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 995 738;
+					setLocation 44 26;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+						setTool mesquite.trees.BasicTreeWindowMaker.BasicTreeWindow.arrow;
+					endTell;
+					getTreeDrawCoordinator #mesquite.trees.BasicTreeDrawCoordinator.BasicTreeDrawCoordinator;
+				tell It;
+					suppress;
+					setTreeDrawer  #mesquite.trees.SquareTree.SquareTree;
+					tell It;
+						setNodeLocs #mesquite.trees.NodeLocsStandard.NodeLocsStandard;
+						tell It;
+							inhibitStretchToggle on;
+							branchLengthsToggle on;
+							toggleScale on;
+							toggleBroadScale off;
+							toggleCenter on;
+							toggleEven on;
+						endTell;
+						setEdgeWidth 3;
+						orientRight;
+						setCornerMode Right_Angle  50;
+					endTell;
+					setBackground White;
+					setBranchColor Black;
+					showNodeNumbers off;
+					showBranchColors on;
+					labelBranchLengths off;
+					centerBrLenLabels on;
+					showBrLensUnspecified on;
+					showBrLenLabelsOnTerminals on;
+					setBrLenLabelColor 0 0 255;
+					setNumBrLenDecimals 6;
+					desuppress;
+					getEmployee #mesquite.trees.BasicDrawTaxonNames.BasicDrawTaxonNames;
+					tell It;
+						setFontSize 18;
+						setColor Black;
+						toggleColorPartition on;
+						toggleShadePartition off;
+						toggleShowFootnotes on;
+						toggleNodeLabels on;
+						toggleCenterNodeNames off;
+						toggleShowNames on;
+						namesAngle ?;
+					endTell;
+				endTell;
+					setTreeNumber 1;
+					setDrawingSizeMode 0;
+					toggleLegendFloat on;
+					scale 0;
+					toggleTextOnTree off;
+					showWindow;
+					newWindowAssistant  #mesquite.R.MesquiteCallsR.ape.APEPlotTree.APEPlotTree;
+				tell It;
+					setOptions 'type = "phylogram", use.edge.length = FALSE, show.tip.label = TRUE, show.node.label = FALSE, font = 3, srt = 0.0, no.margin = TRUE, root.edge  = FALSE, underscore  = FALSE, direction = "rightwards", lab4ut = "horizontal"';
+				endTell;
+				endTell;
+				desuppressEPCResponse;
+				getEmployee #mesquite.trees.ColorBranches.ColorBranches;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.ornamental.BranchNotes.BranchNotes;
+				tell It;
+					setAlwaysOn off;
+				endTell;
+				getEmployee #mesquite.ornamental.ColorTreeByPartition.ColorTreeByPartition;
+				tell It;
+					colorByPartition off;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocDoubles.DrawTreeAssocDoubles;
+				tell It;
+					setOn on;
+					setDigits 4;
+					writeAsPercentage off;
+					toggleCentred on;
+					toggleHorizontal on;
+					toggleWhiteEdges on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocStrings.DrawTreeAssocStrings;
+				tell It;
+					setOn on;
+					toggleCentred on;
+					toggleHorizontal on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.trees.TreeInfoValues.TreeInfoValues;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		newAssistant  #mesquite.basic.ExamplesNavigator.ExamplesNavigator;
+		tell It;
+			setNextFileName 'diversitree01-BiSSEresolved.nex';
+			setPrevFileName 'ape02-ace.nex';
+			getWindow;
+			tell It;
+					popAsTile true;
+					popOut;
+					setExplanationSize 0;
+					setAnnotationSize 0;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 394 788;
+					setLocation 44 26;
+					setFont SanSerif;
+					setFontSize 12;
+					getToolPalette;
+					tell It;
+					endTell;
+					setActive;
+				setExplanation 'ape''s functions for drawing trees can be called using the plot function.  ^n^nThe current tree in the tree window can be plotted into a pdf file by selecting Tree>Utilities>Plot Tree to PDF (ape: plot)^n^nThe current tree in the tree window can be plotted live into a window in R by selecting Tree>Plot Tree (ape: plot).  This window will be maintained current with the tree window.  If the tree in the tree window is changed, the plot in R will be automatically updated.';
+				setTitle 'ape''s tree plotting';
+				toggleFileNames off;
+				setPrevButtonName Previous;
+				setNextButtonName Next;
+			endTell;
+			showWindow;
+		endTell;
+		endTell;
+end;
+
+
